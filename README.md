@@ -1,2 +1,1 @@
-# proton
-self leak
+with the new addition of roblox's modified client detection its pretty much impossible to exploit on an account with an executor without getting warned or banned within less than day so i have decided to leak this because its not worth it to work on anymore, i don't want all my alts terminated nor my valuable alts i exploit on alot terminated + i haven't worked on this mess in a long time
