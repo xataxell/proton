@@ -11,7 +11,8 @@
 ]]--
 setfpscap(0)
 local loadingtime = tick()
-loadstring(game:HttpGet('https://github.com/liam0999/Drawing2/blob/main/Drawing2.lua?raw=true'))()
+HttpGet = game.HttpGet
+loadstring(HttpGet(game,'https://github.com/liam0999/Drawing2/blob/main/Drawing2.lua?raw=true'))()
 
 --// Services
 GetService = game.GetService
@@ -30,7 +31,7 @@ local Teams = GetService(game,'Teams')
 --// Variables
 local CheatName = 'Proton' -- Da cheat name yuh
 local Suffix = 'Technologies' -- The suffix so connected with the default cheat name and default suffix it will be "Proton.Technologies" (if the . is added)
-local PrivateBuild = true -- True and everytime the build type is mentioned it will be "Private Build" otherwise "Public Build" (might become BuildType = 'Private/Public/Developer')
+local PrivateBuild = false -- True and everytime the build type is mentioned it will be "Private Build" otherwise "Public Build" (might become BuildType = 'Private/Public/Developer')
 local ChatData = {}
 local ChatDataColorized = {}
 local PlayerListData = {} -- bruh i probably wont use this ever
@@ -284,7 +285,7 @@ local DrawingFonts = {
 }
 
 --// UI
-local ReGui = loadstring(game:HttpGet('https://raw.githubusercontent.com/depthso/Dear-ReGui/refs/heads/main/ReGui.lua'))()
+local ReGui = loadstring(HttpGet(game,'https://raw.githubusercontent.com/depthso/Dear-ReGui/refs/heads/main/ReGui.lua'))()
 local PrefabsId = `rbxassetid://{ReGui.PrefabsId}`
 ReGui:Init({
 	Prefabs = InsertService:LoadLocalAsset(PrefabsId)
