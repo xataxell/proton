@@ -14,16 +14,18 @@ local loadingtime = tick()
 loadstring(game:HttpGet('https://github.com/liam0999/Drawing2/blob/main/Drawing2.lua?raw=true'))()
 
 --// Services
+GetService = game.GetService
+workspace = GetService(game,'workspace')
 local InsertService = cloneref(game:GetService('InsertService'))
-local Players = cloneref(game:GetService('Players'))
-local TextChatService = cloneref(game:GetService('TextChatService'))
-local MarketplaceService = cloneref(game:GetService('MarketplaceService'))
+local Players = game:GetService('Players')
+local TextChatService = game:GetService('TextChatService')
+local MarketplaceService = game:GetService('MarketplaceService')
 local RunService = cloneref(game:GetService('RunService'))
-local Stats = cloneref(game:GetService('Stats'))
+local Stats = game:GetService('Stats')
 local HttpService = cloneref(game:GetService('HttpService'))
 local CoreGui = cloneref(game:GetService('CoreGui'))
 local UserInputService = cloneref(game:GetService('UserInputService'))
-local Teams = cloneref(game:GetService('Teams'))
+local Teams = game:GetService('Teams')
 
 --// Variables
 local CheatName = 'Proton' -- Da cheat name yuh
