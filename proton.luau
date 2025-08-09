@@ -16,16 +16,16 @@ loadstring(game:HttpGet('https://github.com/liam0999/Drawing2/blob/main/Drawing2
 --// Services
 GetService = game.GetService
 workspace = GetService(game,'workspace')
-local InsertService = cloneref(game:GetService('InsertService'))
-local Players = game:GetService('Players')
-local TextChatService = game:GetService('TextChatService')
-local MarketplaceService = game:GetService('MarketplaceService')
-local RunService = cloneref(game:GetService('RunService'))
-local Stats = game:GetService('Stats')
-local HttpService = cloneref(game:GetService('HttpService'))
-local CoreGui = cloneref(game:GetService('CoreGui'))
-local UserInputService = cloneref(game:GetService('UserInputService'))
-local Teams = game:GetService('Teams')
+local InsertService = cloneref(GetService(game,'InsertService'))
+local Players = GetService(game,'Players')
+local TextChatService = GetService(game,'TextChatService')
+local MarketplaceService = GetService(game,'MarketplaceService')
+local RunService = cloneref(GetService(game,'RunService'))
+local Stats = GetService(game,'Stats')
+local HttpService = cloneref(GetService(game,'HttpService'))
+local CoreGui = cloneref(GetService(game,'CoreGui'))
+local UserInputService = cloneref(GetService(game,'UserInputService'))
+local Teams = GetService(game,'Teams')
 
 --// Variables
 local CheatName = 'Proton' -- Da cheat name yuh
@@ -2619,9 +2619,9 @@ Connections.MainLoopHandler = RunService.Heartbeat:Connect(function(frametime)
 		:gsub('{BuildType}', PrivateBuild and 'Private' or 'Public')
 		:gsub('{CheatName}', CheatName)
 		:gsub('{Suffix}', Suffix)
-		:gsub('{Fps}', math.floor(1/frametime))
+		:gsub('{Fps}', math.min(math.floor(1/frametime),999))
 		:gsub('{Latency}', math.floor(Stats.Network.ServerStatsItem['Data Ping']:GetValue()))) 
-		or string.format('%s.%s - %s Build - %s - %s - %d FPS - %dms', CheatName, Suffix, (PrivateBuild and 'Private' or 'Public'), os.date('%B %d %Y'), os.date('%H:%M:%S'), math.floor(1/frametime), math.floor(Stats.Network.ServerStatsItem['Data Ping']:GetValue()))
+		or string.format('%s.%s - %s Build - %s - %s - %d FPS - %dms', CheatName, Suffix, (PrivateBuild and 'Private' or 'Public'), os.date('%B %d %Y'), os.date('%H:%M:%S'), math.min(math.floor(1/frametime),999), math.floor(Stats.Network.ServerStatsItem['Data Ping']:GetValue()))
 	WatermarkWindow:SetSize(UDim2.new(0, WatermarkText.TextBounds.X + 20, 0, 30))
 	WatermarkWindow:SetPosition(UDim2.new(1, -WatermarkWindow.AbsoluteSize.X - 10, -.035, 0))
 
